@@ -2,7 +2,7 @@
 
 * [Welcome to Everywhere Computer](README.md)
 
-## ⭐ Installing Homestar Nodes <a href="#install" id="install"></a>
+## ⭐ Homestar
 
-* [Homestar](install/homestar.md)
-* [Brew for Homestar](install/brew-for-homestar.md)
+* [Homestar](homestar/homestar.md)
+* [Getting Started](homestar/getting-started.md)
