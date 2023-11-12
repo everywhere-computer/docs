@@ -54,11 +54,15 @@ At the top level, `--help` displays a high-level summary of all commands.
 
 ```
 $ homestar --help
+Homestar CLI
+
+Usage: homestar <COMMAND>
+
 Commands:
-  start  Start Homestar
-  stop   Stop Homestar
-  ping   Ping Homestar to see if it's running
-  run    Run an IPVM-configured workflow file
+  start  Start the Homestar runtime
+  stop   Stop the Homestar runtime
+  ping   Ping the Homestar runtime to see if it's running
+  run    Run an IPVM-configured workflow file on the Homestar runtime
   help   Print this message or the help of the given subcommand(s)
 
 Options:
@@ -72,9 +76,9 @@ The `homestar start` commands starts a Homestar node.
 
 ```
 $ homestar start --help
-Start Homestar
+Start the Homestar runtime
 
-Usage:
+Usage: homestar start [OPTIONS]
 
 Options:
       --db <DATABASE_PATH>  Database path (SQLite) [optional] [env: DATABASE_PATH=] [default: homestar.db]
@@ -84,10 +88,10 @@ Options:
   -h, --help                Print help
 ```
 
-The runtime must be started with a configuration file and an `sqlite` database file. The database file will be created if it does not exist.
+The runtime can be provided a configuration file and an `sqlite` database file. The database file will be created if it does not exist.
 
 ```sh
-homestar start -c settings.toml --db homestar.db
+homestar start -c settings.toml --db my.db
 ```
 
 See our configuration guide for information about node configuration.
@@ -98,14 +102,14 @@ The `homestar stop` command stops a Homestar node.
 
 ```
 $ homestar stop --help
-Stop Homestar
+Stop the Homestar runtime
 
-Usage:
+Usage: homestar stop [OPTIONS]
 
 Options:
       --host <HOST>        Homestar RPC host [default: ::1]
   -p, --port <PORT>        Homestar RPC port [default: 3030]
-      --timeout <TIMEOUT>  Homestar RPC tiemout [default: 60s]
+      --timeout <TIMEOUT>  Homestar RPC timeout [default: 60s]
   -h, --help               Print help
 ```
 
@@ -116,14 +120,14 @@ The RPC port should match the port on the running Homestar node.
 The `homestar run` command requests a workflow run from a Homestar node.
 
 <pre><code><strong>$ homestar run --help
-</strong><strong>Run an IPVM-configured workflow file
-</strong>
-Usage:
+</strong>Run an IPVM-configured workflow file on the Homestar runtime
+
+Usage: homestar run [OPTIONS] --workflow &#x3C;FILE>
 
 Options:
       --host &#x3C;HOST>        Homestar RPC host [default: ::1]
   -p, --port &#x3C;PORT>        Homestar RPC port [default: 3030]
-      --timeout &#x3C;TIMEOUT>  Homestar RPC tiemout [default: 60s]
+      --timeout &#x3C;TIMEOUT>  Homestar RPC timeout [default: 60s]
   -n, --name &#x3C;NAME>        Local name given to a workflow (optional)
   -w, --workflow &#x3C;FILE>    IPVM-configured workflow file to run.
                            Supported:
@@ -144,9 +148,9 @@ The RPC port should match the RPC port of the Homestar runtime that will run the
 The `homestar ping` command pings a Homestar node to check that it is up.
 
 <pre><code><strong>$ homestar ping --help
-</strong>Ping Homestar to see if it's running
+</strong>Ping the Homestar runtime to see if it's running
 
-Usage:
+Usage: homestar ping [OPTIONS]
 
 Options:
       --host &#x3C;HOST>        Homestar RPC host [default: ::1]
