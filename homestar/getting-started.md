@@ -96,6 +96,22 @@ homestar start -c settings.toml --db my.db
 
 See our configuration guide for information about node configuration.
 
+## Ping
+
+The `homestar ping` command pings a Homestar node to check that it is up.
+
+<pre><code><strong>$ homestar ping --help
+</strong>Ping the Homestar runtime to see if it's running
+
+Usage: homestar ping [OPTIONS]
+
+Options:
+      --host &#x3C;HOST>        Homestar RPC host [default: ::1]
+  -p, --port &#x3C;PORT>        Homestar RPC port [default: 3030]
+      --timeout &#x3C;TIMEOUT>  Homestar RPC timeout [default: 60s]
+  -h, --help               Print help
+</code></pre>
+
 ## Stop the runtime
 
 The `homestar stop` command stops a Homestar node.
@@ -142,24 +158,6 @@ homestar run -w tests/fixtures/test-workflow-add-one.json
 ```
 
 The RPC port should match the RPC port of the Homestar runtime that will run the workflow.
-
-## Ping
-
-The `homestar ping` command pings a Homestar node to check that it is up.
-
-<pre><code><strong>$ homestar ping --help
-</strong>Ping the Homestar runtime to see if it's running
-
-Usage: homestar ping [OPTIONS]
-
-Options:
-      --host &#x3C;HOST>        Homestar RPC host [default: ::1]
-  -p, --port &#x3C;PORT>        Homestar RPC port [default: 3030]
-      --timeout &#x3C;TIMEOUT>  Homestar RPC timeout [default: 60s]
-  -h, --help               Print help
-</code></pre>
-
-
 
 ## Debug mode
 
