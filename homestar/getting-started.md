@@ -112,25 +112,6 @@ Options:
   -h, --help               Print help
 </code></pre>
 
-## Stop the runtime
-
-The `homestar stop` command stops a Homestar node.
-
-```
-$ homestar stop --help
-Stop the Homestar runtime
-
-Usage: homestar stop [OPTIONS]
-
-Options:
-      --host <HOST>        Homestar RPC host [default: ::1]
-  -p, --port <PORT>        Homestar RPC port [default: 3030]
-      --timeout <TIMEOUT>  Homestar RPC timeout [default: 60s]
-  -h, --help               Print help
-```
-
-The RPC port should match the port on the running Homestar node.
-
 ## Run a workflow
 
 The `homestar run` command requests a workflow run from a Homestar node.
@@ -158,6 +139,25 @@ homestar run -w tests/fixtures/test-workflow-add-one.json
 ```
 
 The RPC port should match the RPC port of the Homestar runtime that will run the workflow.
+
+## Stop the runtime
+
+The `homestar stop` command stops a Homestar node.
+
+```
+$ homestar stop --help
+Stop the Homestar runtime
+
+Usage: homestar stop [OPTIONS]
+
+Options:
+      --host <HOST>        Homestar RPC host [default: ::1]
+  -p, --port <PORT>        Homestar RPC port [default: 3030]
+      --timeout <TIMEOUT>  Homestar RPC timeout [default: 60s]
+  -h, --help               Print help
+```
+
+The RPC port should match the port on the running Homestar node.
 
 ## Debug mode
 
