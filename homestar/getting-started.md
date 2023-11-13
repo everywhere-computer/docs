@@ -158,3 +158,13 @@ Options:
       --timeout &#x3C;TIMEOUT>  Homestar RPC timeout [default: 60s]
   -h, --help               Print help
 </code></pre>
+
+
+
+## Debug mode
+
+Homestar can be run in debug mode for additional logging by setting the `RUST_LOG` environment variable.
+
+```
+RUST_LOG=homestar=debug,homestar_runtime=debug homestar start
+```
