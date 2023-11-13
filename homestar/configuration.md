@@ -4,7 +4,7 @@ description: Configuring a Homestar node
 
 # Configuration
 
-Homestar nodes are configured with a [TOML](https://toml.io) settings file. The simplest configuration that accepts all default settings only requires a `node` table.
+Homestar nodes are configured with a [TOML](https://toml.io) settings file. The simplest configuration that accepts all default settings requires only a `node` table.
 
 ```toml
 [node]
@@ -88,7 +88,7 @@ node_addresses = [
 
 Homestar nodes discover each other through mDNS and connect on discovery. This discovery technique only works on a LAN and may not be available on some networks.
 
-Nodes are configured with a `0.0.0.0:0` listen address to allow Homestar to determine their local IP address and select a port automatically.
+Nodes are configured with a `0.0.0.0:0` listen address to allow Homestar to automatically determine their local IP address and select a port.
 
 ```toml
 [node.network]
@@ -127,7 +127,7 @@ node_addresses = [
 ]
 ```
 
-The `EXTERNAL-ADDRESS` is an externally reachable address for the node. This could be a public IP address or a local network address like `192.168.1.x`. `RENDEZVOUS-SERVER-ADDRESS` is the address of the rendezvous server.
+The `EXTERNAL-ADDRESS` is an externally reachable address for the node. This address could be a public IP address or a local network address like `192.168.1.x`. `RENDEZVOUS-SERVER-ADDRESS` is the address of the rendezvous server.
 
 A node makes discovery requests by adding a rendezvous server to its `node_addresses`.
 
@@ -139,7 +139,7 @@ node_addresses = [
 ]
 ```
 
-Rendezvous can be disabled completely by disabling `enable_rendezvous_client`.
+Rendezvous can be turned off entirely by disabling `enable_rendezvous_client`.
 
 ```toml
 [node.network]
@@ -149,4 +149,4 @@ enable_rendezvous_client = false
 Nodes can configure the life of their registrations and how often they make discovery requests:
 
 * `rendezvous_registration_ttl`. Sets how long a registration is valid for in seconds. The registrant will renew its registration on expiration. Defaults to two hours.
-* `rendezvous_discovery_interval`. Sets how often discovery requests are made in seconds. Defaults to ten minutes.
+* `rendezvous_discovery_interval`. Sets how often to make discovery requests in seconds. Defaults to ten minutes.

@@ -72,7 +72,7 @@ Options:
 
 ## Start the runtime
 
-The `homestar start` commands starts a Homestar node.
+The `homestar start` command starts a Homestar node.
 
 ```
 $ homestar start --help
@@ -88,13 +88,13 @@ Options:
   -h, --help                Print help
 ```
 
-The runtime can be provided a configuration file and an `sqlite` database file. The database file will be created if it does not exist.
+The runtime can be provided a configuration file and an SQLite database file. Homestar will create the database file if it does not exist.
 
 ```sh
 homestar start -c settings.toml --db my.db
 ```
 
-See our configuration guide for information about node configuration.
+See our [configuration guide](configuration.md) for information about node configuration.
 
 ## Ping
 
@@ -161,7 +161,7 @@ The RPC port should match the port on the running Homestar node.
 
 ## Debug mode
 
-Homestar can be run in debug mode for additional logging by setting the `RUST_LOG` environment variable.
+Run Homestar in debug mode for additional logging by setting the `RUST_LOG` environment variable.
 
 ```
 RUST_LOG=homestar=debug,homestar_runtime=debug homestar start
