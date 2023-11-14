@@ -4,14 +4,7 @@ description: Configuring a Homestar node
 
 # Configuration
 
-Homestar nodes are configured with a [TOML](https://toml.io) settings file. The simplest configuration that accepts all default settings requires only a `node` table.
-
-```toml
-[node]
-
-```
-
-Homestar logs its configuration at start up.
+Homestar nodes are configured with a [TOML](https://toml.io) settings file. Homestar logs its configuration at start up.
 
 ## Minimal configuration
 

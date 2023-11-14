@@ -82,7 +82,7 @@ Usage: homestar start [OPTIONS]
 
 Options:
       --db <DATABASE_PATH>  Database path (SQLite) [optional] [env: DATABASE_PATH=] [default: homestar.db]
-  -c, --config <CONFIG>     Runtime configuration file (.toml) [optional] [default: ./config/settings.toml]
+  -c, --config <CONFIG>     Runtime configuration file (.toml) [optional]
   -d, --daemonize           Daemonize the runtime
       --daemon_dir <DIR>    Directory to place daemon file(s) [default: /tmp]
   -h, --help                Print help
