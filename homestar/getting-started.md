@@ -164,5 +164,5 @@ The RPC port should match the port on the running Homestar node.
 Run Homestar in debug mode for additional logging by setting the [`RUST_LOG`](https://docs.rs/env\_logger/0.10.1/env\_logger/#enabling-logging) environment variable.
 
 ```
-RUST_LOG=homestar=debug,homestar_runtime=debug homestar start
+RUST_LOG=homestar_runtime=debug homestar start
 ```
