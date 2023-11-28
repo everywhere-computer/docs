@@ -8,16 +8,22 @@ Homestar nodes are configured with a [TOML](https://toml.io) settings file. Home
 
 ## Minimal configuration
 
-A minimal configuration sets a `listen_address`, `metrics_port`, `rpc_port`, `webserver_port`, and a `keypair_config`.
+A minimal configuration sets a listen address, metrics port, RPC port, webserver port, and a key pair.
 
 ```toml
 [node]
 
-[node.network]
+[node.network.libp2p]
 listen_address = "/ip4/0.0.0.0/tcp/7001"
-metrics_port = 4020
-rpc_port = 9820
-webserver_port = 8020
+
+[node.network.metrics]
+port = 4020
+
+[node.network.rpc]
+port = 9820
+
+[node.network.webserver]
+port = 8020
 
 [node.network.keypair_config]
 existing = { key_type = "ed25519", path = "./config/ed25519.pem" }
@@ -25,11 +31,11 @@ existing = { key_type = "ed25519", path = "./config/ed25519.pem" }
 
 These settings configure:
 
-* `listen_address`. The multiaddress where the node will listen for `libp2p` network events. Nodes can listen on `0.0.0.0` to serve on all IP addresses or you can assign specific IP addresses.
-* `metrics_port`. A port for scraping Prometheus metrics.
-* `rpc_port`. An RPC port that accepts requests to run workflows.
-* `webserver_port`. A websocket port with JSON-RPC API for running workflows, subscribing to network events, and requesting metrics. Used by the Homestar Control Panel.
-* `keypair_config`. An `ed25519` or `secp256k1` key pair that configures the node with a peer ID.
+* **Listen address.** The multiaddress where the node will listen for `libp2p` network events. Nodes can listen on `0.0.0.0` to serve on all IP addresses or you can assign specific IP addresses.
+* **Metrics port.** A port for scraping Prometheus metrics.
+* **RPC port.** An RPC port that accepts requests to run workflows.
+* **Webserver port.** A websocket port with JSON-RPC API for running workflows, subscribing to network events, and requesting metrics. Used by the [Homestar Control Panel](https://github.com/fission-codes/everywhere-computer-control-panel).
+* **Key pair.** An `ed25519` or `secp256k1` key pair that configures the node with a peer ID.
 
 Homestar will generate a temporary key pair if a `keypair_config` is not set.
 
@@ -42,7 +48,7 @@ Homestar nodes can connect to known peers or discover peers through [mDNS](https
 Homestar nodes connect to peers configured in `node_addresses`. We could connect two nodes with the following settings.
 
 ```toml
-[node.network]
+[node.network.libp2p]
 listen_address = "/ip4/0.0.0.0/tcp/7001"
 node_addresses = [
   "/ip4/<NODE-TWO-ADDRESS>/tcp/7002/p2p/16Uiu2HAm3g9AomQNeEctL2hPwLapap7AtPSNt8ZrBny4rLx1W5Dc",
@@ -50,7 +56,7 @@ node_addresses = [
 ```
 
 ```toml
-[node.network]
+[node.network.libp2p]
 listen_address = "/ip4/0.0.0.0/tcp/7002"
 node_addresses = [
   "/ip4/<NODE-ONE-ADDRESS>/tcp/7001/p2p/12D3KooWDpJ7As7BWAwRMfu1VU2WCqNjvq387JEYKDBj4kx6nXTN",
@@ -62,7 +68,7 @@ node_addresses = [
 For example, we could connect two nodes on a local network.
 
 ```toml
-[node.network]
+[node.network.libp2p]
 listen_address = "/ip4/0.0.0.0/tcp/7001"
 node_addresses = [
   "/ip4/192.168.1.11/tcp/7002/p2p/16Uiu2HAm3g9AomQNeEctL2hPwLapap7AtPSNt8ZrBny4rLx1W5Dc",
@@ -70,7 +76,7 @@ node_addresses = [
 ```
 
 ```toml
-[node.network]
+[node.network.libp2p]
 listen_address = "/ip4/0.0.0.0/tcp/7002"
 node_addresses = [
   "/ip4/192.168.1.26/tcp/7001/p2p/12D3KooWDpJ7As7BWAwRMfu1VU2WCqNjvq387JEYKDBj4kx6nXTN",
@@ -84,15 +90,15 @@ Homestar nodes discover each other through mDNS and connect on discovery. This d
 Nodes are configured with a `0.0.0.0:0` listen address to allow Homestar to automatically determine their local IP address and select a port.
 
 ```toml
-[node.network]
+[node.network.libp2p]
 listen_address = "/ip4/0.0.0.0/tcp/0"
 ```
 
 mDNS can be disabled when it is not needed.
 
 ```toml
-[node.network]
-enable_mdns = false
+[node.network.libp2p.mdns]
+enable = false
 ```
 
 ### Rendezvous discovery
@@ -102,15 +108,17 @@ Homestar nodes can discover each other through a rendezvous server. Each node th
 A Homestar node can act as a rendezvous server by setting `enable_rendezvous_server`.
 
 ```toml
-[node.network]
+[node.network.libp2p]
 listen_address = "/ip4/0.0.0.0/tcp/7000"
-enable_rendezvous_server = true
+
+[node.network.libp2p.rendezvous]
+enable_server = true
 ```
 
 A node registers with a rendezvous server by adding its registration address to `announce_addresses` and the rendezvous server to `node_addresses`.
 
 ```toml
-[node.network]
+[node.network.libp2p]
 listen_address = "/ip4/0.0.0.0/tcp/7001"
 announce_addresses = [
   "/ip4/<EXTERNAL-ADDRESS>/tcp/7001/p2p/16Uiu2HAm3g9AomQNeEctL2hPwLapap7AtPSNt8ZrBny4rLx1W5Dc",
@@ -125,7 +133,7 @@ The `EXTERNAL-ADDRESS` is an externally reachable address for the node. This add
 A node makes discovery requests by adding a rendezvous server to its `node_addresses`.
 
 ```toml
-[node.network]
+[node.network.libp2p]
 listen_address = "/ip4/0.0.0.0/tcp/7002"
 node_addresses = [
   "/ip4/<RENDEZVOUS-SERVER-ADDRESS>/tcp/7000/p2p/12D3KooWDpJ7As7BWAwRMfu1VU2WCqNjvq387JEYKDBj4kx6nXTN",
@@ -135,11 +143,11 @@ node_addresses = [
 Rendezvous can be turned off entirely by disabling `enable_rendezvous_client`.
 
 ```toml
-[node.network]
-enable_rendezvous_client = false
+[node.network.libp2p.rendezvous]
+enable_client = false
 ```
 
 Nodes can configure the life of their registrations and how often they make discovery requests:
 
-* `rendezvous_registration_ttl`. Sets how long a registration is valid for in seconds. The registrant will renew its registration on expiration. Defaults to two hours.
-* `rendezvous_discovery_interval`. Sets how often to make discovery requests in seconds. Defaults to ten minutes.
+* `registration_ttl`. Sets how long a registration is valid for in seconds. The registrant will renew its registration on expiration. Defaults to two hours.
+* `discovery_interval`. Sets how often to make discovery requests in seconds. Defaults to ten minutes.
