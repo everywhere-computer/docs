@@ -6,6 +6,8 @@ description: Configuring a Homestar node
 
 Homestar nodes are configured with a [TOML](https://toml.io) settings file. Homestar logs its configuration at start up.
 
+We maintain a [defaults.toml](https://github.com/ipvm-wg/homestar/blob/main/homestar-runtime/fixtures/defaults.toml) configuration file than includes all default Homestar settings.
+
 ## Minimal configuration
 
 A minimal configuration sets a listen address, metrics port, RPC port, webserver port, and a key pair.
