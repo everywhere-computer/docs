@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Welcome to Everywhere Computer](README.md)
+  * [Self Guided Workshop](welcome-to-everywhere-computer/self-guided-workshop.md)
 
 ## ⭐ Homestar
 
