@@ -9,7 +9,7 @@ description: >-
 
 Here is a small repo with supporting files for this exercise:
 
-{% embed url="https://github.com/fission-codes/ipfsconnect-istanbul-workshop-2023" %}
+{% embed url="https://github.com/fission-codes/ipvm-self-guided-workshop/" %}
 
 You can check out the contents of this repo, or download the `functions.wasm` and `settings.toml` directly.
 
