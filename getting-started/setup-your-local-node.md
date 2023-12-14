@@ -2,12 +2,12 @@
 description: Get the Everywhere Computer✵ up and running on your local machine.
 ---
 
-# Getting Started
+# Setup Your Local Node
 
 The **Everywhere Computer (**[**ϵ✵**](#user-content-fn-1)[^1]**)** is powered by [Homestar](https://github.com/ipvm-wg/homestar) nodes — a reference implementation of the [IPVM](https://github.com/ipvm-wg) protocol. This guide will help you:
 
-1. **Prepare** your IPFS on your local machine
-2. **Setup** your first local Homestar node
+1. **Prepare** IPFS on your local machine — a dependency of the Everywhere Computer
+2. **Setup** your local Homestar node
 3. **Access** the Everywhere Computer control panel
 
 ## Preparing IPFS
