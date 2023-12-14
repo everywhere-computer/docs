@@ -11,6 +11,6 @@
 
 ## 💫 Homestar Nodes <a href="#homestar" id="homestar"></a>
 
-* [Homestar](homestar/homestar.md)
+* [What is Homestar?](homestar/what-is-homestar.md)
 * [Using Homestar](homestar/using-homestar.md)
 * [Configuration](homestar/configuration.md)
