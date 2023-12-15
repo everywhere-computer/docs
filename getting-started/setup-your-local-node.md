@@ -12,7 +12,7 @@ The **Everywhere Computer (**[**ϵ✵**](#user-content-fn-1)[^1]**)** is powered
 
 ## Preparing IPFS
 
-We’ve said that computation on the Everywhere Computer is both portable and durable. These two traits are, in part, made possible thanks to the power of [IPFS’ content addressing](https://fission.codes/blog/content-addressing-what-it-is-and-how-it-works/), and web assembly’s ability to execute in just about _any_ environment — including browsers.
+The Everywhere Computer is both portable and durable. These two traits are made possible by [IPFS’ content addressing](https://fission.codes/blog/content-addressing-what-it-is-and-how-it-works/) and web assembly’s ability to execute in _any_ environment — including browsers.
 
 ### 1. Install IPFS
 
@@ -50,7 +50,7 @@ brew install fission-codes/fission/homestar
 
 Using WSL2 is recommended for this workshop. If you're using Windows, please follow the Linux instructions above.
 
-## Setup your workspace
+## Setting up your workspace
 
 We'll store settings for your local Homestar node and the registry of functions that your workflows will run on Everywhere Computer in a workspace.
 
@@ -90,16 +90,15 @@ We can now start the node by running:
 homestar start -c ./settings.toml  
 ```
 
-It's alive!
+**🧟 **_**It's alive!**_** 🧟**
 
 ## Accessing the control panel
 
-The control panel is where you can monitor the status of your Homestar node and its view of the Everywhere Computer network, as well as build and execute workflows.&#x20;
+You'll manage your Homestar node and its view of the Everywhere Computer network via the Control Panel. You have two options:
 
-The easiest way to get going is to visit [https://control.everywhere.computer/](https://control.everywhere.computer/). If you want to be truly local-first, you can also [install and run the control panel locally.](https://github.com/everywhere-computer/control-panel)
+* Use our hosted version: [control.everywhere.computer](https://control.everywhere.computer/)
+* Run it local-first: [install and run the control panel locally](https://github.com/everywhere-computer/control-panel)
 
-Now that Everywhere Computer (via `homestar`) and IPFS (via `kubo`) are running locally, it's time to experiment by creating your own workflows and running them locally.&#x20;
-
-We'll explore this in the next guide.
+Now that Everywhere Computer (via `homestar`) and IPFS (via `kubo`) are running locally, it's time to experiment by [running a workflow](run-a-workflow.md).
 
 [^1]: Everywhere Computer
