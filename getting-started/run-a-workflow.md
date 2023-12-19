@@ -1,7 +1,7 @@
 ---
 description: >-
-  Now that Everywhere Computer is running on your machine, let's get it to run
-  some computation.
+  Now that the Everywhere Computer is running on your machine, let's run some
+  computation.
 ---
 
 # Run a Workflow

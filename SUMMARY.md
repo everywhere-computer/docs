@@ -9,7 +9,25 @@
 * [Customize a Workflow](getting-started/customize-a-workflow.md)
 * [Write a Custom Function](getting-started/write-a-custom-function.md)
 
-## 💫 Homestar Nodes <a href="#homestar" id="homestar"></a>
+## 🎛 Control Panel
+
+* [What is the Control Panel?](control-panel/what-is-the-control-panel.md)
+* [Workspaces](control-panel/workspaces.md)
+* [Running it locally](control-panel/running-it-locally.md)
+
+## 🪡 Workflows
+
+* [What is a Workflow?](workflows/what-is-a-workflow.md)
+
+## 🧩 Functions
+
+* [What is a Function?](functions/what-is-a-function.md)
+
+## 👥 Accounts
+
+* [About Accounts](accounts/about-accounts.md)
+
+## 💫 Homestar
 
 * [What is Homestar?](homestar/what-is-homestar.md)
 * [Using Homestar](homestar/using-homestar.md)
