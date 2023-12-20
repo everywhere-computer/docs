@@ -31,7 +31,15 @@ To install your first Everywhere Computer `Homestar` node, we recommend download
 
 <mark style="background-color:orange;">🚧 This is still under very active development! 🚧</mark>
 
-### macOS
+### Cross-platform: Node
+
+Open your terminal and run:
+
+```
+npm install homestar-runtime -g
+```
+
+### macOS: homebrew
 
 Install `homestar` using brew by running:
 
@@ -39,36 +47,32 @@ Install `homestar` using brew by running:
 brew install fission-codes/fission/homestar  
 ```
 
-### Linux
+### Linux & Windows
+
+{% hint style="info" %}
+For Windows folks, using WSL2 is recommended.
+{% endhint %}
 
 1. Go to this page and scroll down to `Artifacts`: [https://github.com/ipvm-wg/homestar/actions/runs/7117766904](https://github.com/ipvm-wg/homestar/actions/runs/7117766904)
 2. Download the `.zip` file for your platform - we recommend the `musl` build for linux
 3. Unzip the file and move the `homestar` binary to somewhere in your path (e.g. `/usr/local/bin`)
 4. Make sure the binary is executable (`chmod +x /usr/local/bin/homestar`)
 
-### Windows
-
-Using WSL2 is recommended for this workshop. If you're using Windows, please follow the Linux instructions above.
-
 ## Setting up your workspace
 
 We'll store settings for your local Homestar node and the registry of functions that your workflows will run on Everywhere Computer in a workspace.
 
-### 1. Clone the \`default-workspace\` repo
+### 1. Clone the \`getting-started\` repo
 
 {% embed url="https://github.com/everywhere-computer/getting-started" %}
 
-Open your terminal and navigate to the `default-workspace` folder.
+Open your terminal and navigate to the `getting-started` folder.
 
 ### 2. Add the default functions to IPFS
 
-Earlier, we got IPFS running on your machine via kubo.&#x20;
+All functions on the Everywhere Computer are [content addressed](https://fission.codes/blog/content-addressing-what-it-is-and-how-it-works/) on IPFS, which means they are identified and located using something called a CID (Content IDentifier). This getting started workspace includes a set of image manipulation functions that our sample workflows will run.&#x20;
 
-This default workspace includes a set of image manipulation functions that our sample workflows will run.&#x20;
-
-All functions on the Everywhere Computer are [content addressed](https://fission.codes/blog/content-addressing-what-it-is-and-how-it-works/) on IPFS, which means they are identified and located using something called a CID (Content IDentifier).
-
-To add the functions to your local IPFS node, run:
+To add these image manipulation functions to your local IPFS node, run:
 
 ```
 ipfs add --cid-version 1 ./functions.wasm  
@@ -87,17 +91,18 @@ openssl ecparam -genkey -name secp256k1 -outform DER -out secp256k1_key.der
 We can now start the node by running:
 
 ```
-homestar start -c ./settings.toml  
+homestar start -c ./settings.toml --db ./homestar.db
 ```
 
 **🧟 **_**It's alive!**_** 🧟**
 
 ## Accessing the control panel
 
-You'll manage your Homestar node and its view of the Everywhere Computer network via the Control Panel. You have two options:
+You'll manage your Homestar node and its view of the Everywhere Computer network via the Control Panel: [control.everywhere.computer](https://control.everywhere.computer/)
 
-* Use our hosted version: [control.everywhere.computer](https://control.everywhere.computer/)
-* Run it local-first: [install and run the control panel locally](https://github.com/everywhere-computer/control-panel)
+{% hint style="info" %}
+The exercises in our Getting Started guides are written for the hosted version of the control panel, for ease of setup. In the spirit of local-first software, of course you can also [run it locally](../control-panel/running-it-locally.md).
+{% endhint %}
 
 Now that Everywhere Computer (via `homestar`) and IPFS (via `kubo`) are running locally, it's time to experiment by [running a workflow](run-a-workflow.md).
 
