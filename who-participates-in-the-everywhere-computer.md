@@ -20,8 +20,8 @@ Try your hand at writing functions and workflow templates for the Everywhere Com
 
 * **Front-End Devs:** Get backend capabilities that run local-first, on your users' devices, and run at scale on the Everywhere Computer when needed.
 * **Rust(aceans):** Rust is the native language of our Homestar nodes, and is ready for you to author in today.
-* **JavaScript:** coming soon...&#x20;
-* **Python:** coming soon...
+* **JavaScript:**  <mark style="background-color:green;">coming soon</mark> Track the progress on our [Roadmap](https://github.com/orgs/everywhere-computer/projects/1)
+* **Python:**  <mark style="background-color:green;">coming soon</mark> Track the progress on our [Roadmap](https://github.com/orgs/everywhere-computer/projects/1)
 * **BYOL (Bring Your Own Language):** For languages that support Wasm & the Wasm component model, you can write and deploy to the Everywhere Computer today. _And,_ for those that don't, the path is open for you to develop a language integration on your own by supporting Wasm & the Wasm component model.
 
 You can get started [writing custom functions](getting-started/write-a-custom-function.md) right now, and soon we'll have a global registry for you to publish them to.
