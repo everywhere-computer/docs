@@ -1,8 +1,9 @@
 ---
+title: Setup Your Local Node
 description: Get the Everywhere Computer✵ up and running on your local machine.
+sidebar:
+  order: 1
 ---
-
-# Setup Your Local Node
 
 The **Everywhere Computer (**[**ϵ✵**](#user-content-fn-1)[^1]**)** is powered by [Homestar](https://github.com/ipvm-wg/homestar) nodes — a reference implementation of the [IPVM](https://github.com/ipvm-wg) protocol. This guide will help you:
 
@@ -27,9 +28,11 @@ Make sure kubo is running! Either by launching IPFS Desktop, or running `ipfs da
 
 ## Installing Homestar
 
-To install your first Everywhere Computer `Homestar` node, we recommend downloading a build directly from github.
+:::caution
+🚧 This is still under very active development! 🚧
+:::
 
-<mark style="background-color:orange;">🚧 This is still under very active development! 🚧</mark>
+To install your first Everywhere Computer `Homestar` node, we recommend downloading a build directly from github.
 
 ### Cross-platform: Node
 

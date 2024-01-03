@@ -1,10 +1,12 @@
 ---
-description: >-
+title: 🤔 Why Choose the Everywhere Computer?
+description: 
   You already have many ways of running compute over a network. When is the
   Everything Computer a good fit?
 ---
 
-# 🤔 Why Choose the Everywhere Computer?
+You already have many ways of running compute over a network. When is the
+  Everything Computer a good fit?
 
 ## Choose the Everywhere Computer when...
 

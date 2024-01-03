@@ -1,22 +1,10 @@
 ---
-description: >-
+title: 👋 Welcome
+description:
   The Everywhere Computer provides portable, durable compute. It runs
   local-first, meaning it can survive at the extreme edge with absolutely no
   connectivity. And it handles metering and billing.
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
-
-# 👋 Welcome
 
 The **Everywhere Computer (**[**ϵ✵**](#user-content-fn-1)[^1]**)** lets you write complex code that runs _everywhere_ — your local machine, proprietary hyper-clouds, and everything in between. It lets you compose small, powerful functions into complex workflow logic, and execute them reliably at scale.
 

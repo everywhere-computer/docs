@@ -5,22 +5,38 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
+			title: 'Everywhere Computer',
 			social: {
-				github: 'https://github.com/withastro/starlight',
+				github: 'https://github.com/everywhere-computer',
 			},
 			sidebar: [
+				{ label: '👋 Welcome', link: '/' },
+				{ label: '🤔 Why Choose It?', link: '/why-choose' },
+				{ label: '🤝 Who Participates?', link: '/who-participates' },
 				{
-					label: 'Guides',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', link: '/guides/example/' },
-					],
+					label: '🏗️ Getting Started',
+					autogenerate: { directory: 'getting-started' },
 				},
+				// {
+				// 	label: '🎛️ Control Panel',
+				// 	autogenerate: { directory: 'control-panel' },
+				// },
+				// {
+				// 	label: '🪡 Workflows',
+				// 	autogenerate: { directory: 'workflows' },
+				// },
 				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					label: '💫 Homestar',
+					autogenerate: { directory: 'homestar' },
 				},
+				// {
+				// 	label: '🔌 Integrations',
+				// 	autogenerate: { directory: 'integrations' },
+				// },
+				// {
+				// 	label: '👥 Accounts',
+				// 	autogenerate: { directory: 'integrations' },
+				// },
 			],
 		}),
 	],

@@ -1,8 +1,7 @@
 ---
+title: Configuration
 description: Configuring a Homestar node
 ---
-
-# Configuration
 
 Homestar nodes are configured with a [TOML](https://toml.io) settings file. Homestar logs its configuration at start up.
 

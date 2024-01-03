@@ -1,4 +1,9 @@
-# What is Homestar?
+---
+title: What is Homestar?
+description: tbd
+sidebar:
+  order: 1
+---
 
 Homestar is the Rust-based server that is a reference implementation of the IPVM protocol focused on WebAssembly-based workflows.
 

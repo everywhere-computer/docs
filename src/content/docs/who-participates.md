@@ -1,8 +1,9 @@
 ---
+title: 🤝 Who Participates in the Everywhere Computer?
 description: There are many ways to get involved.
 ---
 
-# 🤝 Who Participates in the Everywhere Computer?
+There are many ways to get involved.
 
 ## **As an Operator**
 
@@ -16,7 +17,7 @@ No matter your eventual scale, the best place to start is by [running a local no
 
 ## **As a Function Author**
 
-Try your hand at writing functions and workflow templates for the Everywhere Computer. They compile to Wasm[^1] and can be run by anyone in the network.
+Try your hand at writing functions and workflow templates for the Everywhere Computer. They compile to Wasm (WebAssembly) and can be run by anyone in the network.
 
 * **Front-End Devs:** Get backend capabilities that run local-first, on your users' devices, and run at scale on the Everywhere Computer when needed.
 * **Rust(aceans):** Rust is the native language of our Homestar nodes, and is ready for you to author in today.
@@ -37,5 +38,3 @@ Beyond authoring functions, and operating nodes, there are a variety of services
 * **Cloud Services (aka IaaS, BaaS, PaaS and SaaS):**  The Everywhere Computer is compatible with any UCAN-enabled service endpoint.
 
 If you're interested in providing services to the Everywhere Computer community, book a call with us: [https://calendly.com/everywherecomputer/product](https://calendly.com/everywherecomputer/product)
-
-[^1]: WebAssembly

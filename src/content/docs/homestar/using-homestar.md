@@ -1,8 +1,7 @@
 ---
+title: Using Homestar
 description: Getting started with Homestar
 ---
-
-# Using Homestar
 
 ## Building&#x20;
 

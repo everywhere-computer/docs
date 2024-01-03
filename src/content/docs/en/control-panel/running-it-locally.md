@@ -1,3 +1,0 @@
-# Running it locally
-
-tbd
