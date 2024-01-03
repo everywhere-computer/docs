@@ -1,38 +1,54 @@
----
-description: >-
-  The Everywhere Computer provides portable, durable compute. It runs
-  local-first, meaning it can survive at the extreme edge with absolutely no
-  connectivity. And it handles metering and billing.
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
+# Starlight Starter Kit: Basics
 
-# 👋 Welcome
+[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
 
-The **Everywhere Computer (**[**ϵ✵**](#user-content-fn-1)[^1]**)** lets you write complex code that runs _everywhere_ — your local machine, proprietary hyper-clouds, and everything in between. It lets you compose small, powerful functions into complex workflow logic, and execute them reliably at scale.
+```
+npm create astro@latest -- --template starlight
+```
 
-When you choose the Everywhere Computer, you choose the ability to:
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/starlight/tree/main/examples/basics)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/starlight/tree/main/examples/basics)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fwithastro%2Fstarlight%2Ftree%2Fmain%2Fexamples%2Fbasics&project-name=my-starlight-docs&repository-name=my-starlight-docs)
 
-* **Run** your own self-managed network or rent from ours
-* **Write** functions in your language of choice: Rust, JS, ++
-* **Compose** functions and workflows written by others
-* **Extend** the network's capabilities with any UCAN[^2]-enabled service
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-## Where do I begin?
+## 🚀 Project Structure
 
-Jump right in and follow our [Getting Started](getting-started/setup-your-local-node.md) guide to begin experimenting with a local node. If you're curious about what's coming next, check out our [Roadmap](https://github.com/orgs/everywhere-computer/projects/1/views/1).&#x20;
+Inside of your Astro + Starlight project, you'll see the following folders and files:
 
-Or, if you'd like to learn more about the Everywhere Computer ecosystem, read on...
+```
+.
+├── public/
+├── src/
+│   ├── assets/
+│   ├── content/
+│   │   ├── docs/
+│   │   └── config.ts
+│   └── env.d.ts
+├── astro.config.mjs
+├── package.json
+└── tsconfig.json
+```
 
-[^1]: Everywhere Computer
+Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
 
-[^2]: User Controlled Access Networks: a local-first object capability based authorization protocol
+Images can be added to `src/assets/` and embedded in Markdown with a relative link.
+
+Static assets, like favicons, can be placed in the `public/` directory.
+
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
