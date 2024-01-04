@@ -5,15 +5,17 @@ sidebar:
   order: 1
 ---
 
-The **Everywhere Computer (**[**ϵ✵**](#user-content-fn-1)[^1]**)** is powered by [Homestar](https://github.com/ipvm-wg/homestar) nodes — a reference implementation of the [IPVM](https://github.com/ipvm-wg) protocol. This guide will help you:
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+The **Everywhere Computer** is powered by [Homestar](https://github.com/ipvm-wg/homestar) nodes — a reference implementation of the [IPVM](https://github.com/ipvm-wg) protocol. This guide will help you:
 
 1. **Prepare** IPFS on your local machine — a dependency of the Everywhere Computer
 2. **Setup** your local Homestar node
 3. **Access** the Everywhere Computer control panel
 
-## Preparing IPFS
+## Prepare IPFS
 
-The Everywhere Computer is both portable and durable. These two traits are made possible by [IPFS’ content addressing](https://fission.codes/blog/content-addressing-what-it-is-and-how-it-works/) and web assembly’s ability to execute in _any_ environment — including browsers.
+The Everywhere Computer is both portable and durable. These two traits are made possible by [IPFS’ content addressing](https://fission.codes/blog/content-addressing-what-it-is-and-how-it-works/) and WebAssembly's ability to execute in _any_ environment — including browsers.
 
 ### 1. Install IPFS
 
@@ -26,50 +28,49 @@ Just as the Everywhere Computer is powered by Homestar nodes, IPFS is powered by
 
 Make sure kubo is running! Either by launching IPFS Desktop, or running `ipfs daemon` in your terminal.
 
-## Installing Homestar
+## Install Homestar
 
 :::caution
 🚧 This is still under very active development! 🚧
 :::
 
-To install your first Everywhere Computer `Homestar` node, we recommend downloading a build directly from github.
+To install your first Everywhere Computer `Homestar` node, we recommend the cross-platform approach via npm.
 
-### Cross-platform: Node
-
+<Tabs>
+  <TabItem label="Node">
 Open your terminal and run:
 
 ```
 npm install homestar-runtime -g
-```
-
-### macOS: homebrew
-
+```  
+  </TabItem>
+  <TabItem label="macOS">
 Install `homestar` using brew by running:
 
 ```
 brew install fission-codes/fission/homestar  
 ```
-
-### Linux & Windows
-
-{% hint style="info" %}
+  </TabItem>
+  <TabItem label="Linux & Windows">
+:::note
 For Windows folks, using WSL2 is recommended.
-{% endhint %}
+:::
 
 1. Go to this page and scroll down to `Artifacts`: [https://github.com/ipvm-wg/homestar/actions/runs/7117766904](https://github.com/ipvm-wg/homestar/actions/runs/7117766904)
 2. Download the `.zip` file for your platform - we recommend the `musl` build for linux
 3. Unzip the file and move the `homestar` binary to somewhere in your path (e.g. `/usr/local/bin`)
 4. Make sure the binary is executable (`chmod +x /usr/local/bin/homestar`)
+  </TabItem>
+</Tabs>
 
-## Setting up your workspace
+## Setup your workspace
 
 We'll store settings for your local Homestar node and the registry of functions that your workflows will run on Everywhere Computer in a workspace.
 
 ### 1. Clone the \`getting-started\` repo
 
-{% embed url="https://github.com/everywhere-computer/getting-started" %}
-
-Open your terminal and navigate to the `getting-started` folder.
+1. Clone the repo here: https://github.com/everywhere-computer/getting-started
+2. Open your terminal and navigate to the `getting-started` folder.
 
 ### 2. Add the default functions to IPFS
 
@@ -89,7 +90,7 @@ Your local Homestar node needs to be identifiable on the Everywhere Computer net
 openssl ecparam -genkey -name secp256k1 -outform DER -out secp256k1_key.der  
 ```
 
-## Booting up the Everywhere Computer
+## Boot up the Everywhere Computer
 
 We can now start the node by running:
 
@@ -97,16 +98,14 @@ We can now start the node by running:
 homestar start -c ./settings.toml --db ./homestar.db
 ```
 
-**🧟 **_**It's alive!**_** 🧟**
+**🧟 It's alive! 🧟**
 
-## Accessing the control panel
+## Access the Control Panel
 
 You'll manage your Homestar node and its view of the Everywhere Computer network via the Control Panel: [control.everywhere.computer](https://control.everywhere.computer/)
 
-{% hint style="info" %}
-The exercises in our Getting Started guides are written for the hosted version of the control panel, for ease of setup. In the spirit of local-first software, of course you can also [run it locally](../control-panel/running-it-locally.md).
-{% endhint %}
+Now that Everywhere Computer (via `homestar`) and IPFS (via `kubo`) are running locally, it's time to experiment by [running a workflow](run-a-workflow).
 
-Now that Everywhere Computer (via `homestar`) and IPFS (via `kubo`) are running locally, it's time to experiment by [running a workflow](run-a-workflow.md).
-
-[^1]: Everywhere Computer
+:::note[Want to run it local?]
+The exercises in our Getting Started guides are written for the hosted version of the control panel, for ease of setup. In the spirit of local-first software, of course you can also [run it locally](../control-panel/running-it-locally).
+:::

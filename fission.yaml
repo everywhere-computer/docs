@@ -1,0 +1,3 @@
+ignore: []
+url: everywhere-computer-docs.fission.app
+build: ./dist
