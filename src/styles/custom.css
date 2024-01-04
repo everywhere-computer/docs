@@ -1,5 +1,29 @@
-/* Dark mode colors. */
+@font-face {
+    font-family: 'Overpass';
+    src: url('/src/fonts/overpass-variable.woff2') format('woff2'),
+          url('/src/fonts/overpass-variable.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  
+@font-face {
+    font-family: 'OverpassMono';
+    src: url('/src/fonts/overpassmono-variable.woff2') format('woff2'),
+          url('/src/fonts/overpassmono-variable.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 :root {
+    --sl-font: 'Overpass', sans;
+    --sl-font-mono: 'OverpassMono';
+    --sl-text-code: var(--sl-text-base);
+
+    /* Dark mode colors. */
 	--sl-color-accent-low: #312185;
 	--sl-color-accent: #6A50EB;
 	--sl-color-accent-high: #BAA6FF;
@@ -12,8 +36,9 @@
 	--sl-color-gray-6: #232538;
 	--sl-color-black: #181929;
 }
-/* Light mode colors. */
+
 :root[data-theme='light'] {
+    /* Light mode colors. */
 	--sl-color-accent-low: #BAA6FF;
 	--sl-color-accent: #6A50EB;
 	--sl-color-accent-high: #312185;

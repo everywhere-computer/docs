@@ -40,14 +40,14 @@ To install your first Everywhere Computer `Homestar` node, we recommend the cros
   <TabItem label="Node">
 Open your terminal and run:
 
-```
+```bash
 npm install homestar-runtime -g
 ```  
   </TabItem>
   <TabItem label="macOS">
 Install `homestar` using brew by running:
 
-```
+```bash
 brew install fission-codes/fission/homestar  
 ```
   </TabItem>
@@ -78,7 +78,7 @@ All functions on the Everywhere Computer are [content addressed](https://fission
 
 To add these image manipulation functions to your local IPFS node, run:
 
-```
+```bash
 ipfs add --cid-version 1 ./functions.wasm  
 ```
 
@@ -86,7 +86,7 @@ ipfs add --cid-version 1 ./functions.wasm
 
 Your local Homestar node needs to be identifiable on the Everywhere Computer network. To do this, run:
 
-```
+```bash
 openssl ecparam -genkey -name secp256k1 -outform DER -out secp256k1_key.der  
 ```
 
@@ -94,7 +94,7 @@ openssl ecparam -genkey -name secp256k1 -outform DER -out secp256k1_key.der
 
 We can now start the node by running:
 
-```
+```bash
 homestar start -c ./settings.toml --db ./homestar.db
 ```
 
