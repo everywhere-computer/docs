@@ -1,0 +1,8 @@
+---
+import type { Props } from '@astrojs/starlight/props';
+import Default from '@astrojs/starlight/components/Head.astro';
+import openGraphImage from '../assets/open-graph.png';
+---
+
+<Default {...Astro.props}><slot /></Default>
+<meta property="og:image" content={openGraphImage.src}>

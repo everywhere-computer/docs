@@ -7,6 +7,10 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'Everywhere Computer',
+			components: {
+				// Override the default `Head` component.
+				Head: './src/components/Head.astro',
+			},
 			logo: {
 				light: '/src/assets/logo-light.svg',
     			dark: './src/assets/logo-dark.svg',
