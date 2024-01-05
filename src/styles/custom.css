@@ -1,6 +1,7 @@
 @font-face {
     font-family: 'Overpass';
-    src: url('/src/fonts/overpass-variable.woff2') format('woff2'),
+    src: url('/src/fonts/overpass-variable.woff2') format("woff2 supports variations"),
+          url('/src/fonts/overpass-variable.woff2') format('woff2-variations'),
           url('/src/fonts/overpass-variable.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -10,7 +11,8 @@
   
 @font-face {
     font-family: 'OverpassMono';
-    src: url('/src/fonts/overpassmono-variable.woff2') format('woff2'),
+    src: url('/src/fonts/overpassmono-variable.woff2') format('woff2 supports variations'),
+         url('/src/fonts/overpassmono-variable.woff2') format('woff2-variations'),
           url('/src/fonts/overpassmono-variable.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -21,7 +23,6 @@
 :root {
     --sl-font: 'Overpass', sans;
     --sl-font-mono: 'OverpassMono';
-    --sl-text-code: var(--sl-text-base);
 
     /* Dark mode colors. */
 	--sl-color-accent-low: #312185;

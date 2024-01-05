@@ -17,15 +17,16 @@ export default defineConfig({
 				'./src/styles/custom.css',
 			],
 			favicon: './src/assets/favicon.svg',
-			head: [
-				{
-					tag: 'meta',
-					attrs: {
-						property: 'og:image',
-						content: './src/assets/open-graph.png',
-					},
-				},
-			],
+			expressiveCode: {
+				plugins: [{
+					name: 'Variable Weight',
+					baseStyles: `
+						pre > code {
+							font-variation-settings: 'wght' 550;
+						}
+					`,
+				}],
+			},
 			social: {
 				github: 'https://github.com/everywhere-computer',
 				discord: 'https://discord.gg/yU6y8XMGaY',
