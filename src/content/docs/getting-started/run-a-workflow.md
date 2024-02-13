@@ -1,6 +1,6 @@
 ---
 title: Run a Workflow
-description: 
+description:
   Now that the Everywhere Computer is running on your machine, let's run a
   workflow.
 sidebar:
@@ -26,4 +26,4 @@ Once you have hit `Run`, you should see the workflow in `Running...` mode.
 
 Shortly, your first workflow run should be `complete`. And you should be able to view the output: a cropped and blurred version of your original input image.
 
-Painless, right? Now let's work on [customizing that workflow](customize-a-workflow).
+Painless, right? Now let's work on [customizing that workflow](../customize-a-workflow).
