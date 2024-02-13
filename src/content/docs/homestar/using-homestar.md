@@ -3,39 +3,9 @@ title: Using Homestar
 description: Getting started with Homestar
 ---
 
-## Building&#x20;
+## Install
 
-[Install Rust](https://www.rust-lang.org/tools/install) for your platform, then clone the Homestar repository:
-
-```sh
-git clone git@github.com:ipvm-wg/homestar.git
-```
-
-Build the runtime binary for development.
-
-```sh
-cargo build
-```
-
-Build the binary for production release.
-
-```sh
-cargo build --release
-```
-
-Copy the binary to a directory on your `PATH`.
-
-```sh
-# Development
-cp target/debug/homestar <DIRECTORY-ON-PATH>
-
-# Release
-cp target/release/homestar <DIRECTORY-ON-PATH>
-```
-
-{% hint style="info" %}
-Homestar binaries will be available to download on GitHub soon.
-{% endhint %}
+See [Setup Your Local Node](../../getting-started/setup-your-local-node#install-homestar) for instructions on installing Homestar.
 
 ## Help
 
