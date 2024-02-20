@@ -9,11 +9,7 @@ More info in the Github repo, including usage: https://github.com/everywhere-com
 
 ## Wasmify
 
-In order to make an easy experience for JavaScript developers, the Every CLI has a `gen-wasm` function. 
-
-```
-every gen-wasm <ABSOLUTE_PATH_TO_TS_FUNCTION_FILE>
-```
+In order to make an easy experience for JavaScript developers, the Every CLI has a function to "Wasmify" TypeScript source code. This will output a compiled Wasm binary that can be run directly in Everywhere Computer.
 
 This relies on [ComponentizeJS](https://github.com/bytecodealliance/ComponentizeJS):
 
