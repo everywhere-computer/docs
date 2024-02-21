@@ -3,39 +3,9 @@ title: Using Homestar
 description: Getting started with Homestar
 ---
 
-## Building&#x20;
+## Install
 
-[Install Rust](https://www.rust-lang.org/tools/install) for your platform, then clone the Homestar repository:
-
-```sh
-git clone git@github.com:ipvm-wg/homestar.git
-```
-
-Build the runtime binary for development.
-
-```sh
-cargo build
-```
-
-Build the binary for production release.
-
-```sh
-cargo build --release
-```
-
-Copy the binary to a directory on your `PATH`.
-
-```sh
-# Development
-cp target/debug/homestar <DIRECTORY-ON-PATH>
-
-# Release
-cp target/release/homestar <DIRECTORY-ON-PATH>
-```
-
-{% hint style="info" %}
-Homestar binaries will be available to download on GitHub soon.
-{% endhint %}
+See [Setup Your Local Node](../../getting-started/setup-your-local-node#install-homestar) for instructions on installing Homestar.
 
 ## Help
 
@@ -45,8 +15,6 @@ At the top level, `--help` displays a high-level summary of all commands.
 
 ```
 $ homestar --help
-Homestar CLI
-
 Usage: homestar <COMMAND>
 
 Commands:
@@ -54,6 +22,8 @@ Commands:
   stop   Stop the Homestar runtime
   ping   Ping the Homestar runtime to see if it's running
   run    Run an IPVM-configured workflow file on the Homestar runtime
+  node   Get node identity / information
+  info   Get Homestar binary and other information
   help   Print this message or the help of the given subcommand(s)
 
 Options:
@@ -91,42 +61,46 @@ See our [configuration guide](configuration) for information about node configur
 
 The `homestar ping` command pings a Homestar node to check that it is up.
 
-<pre><code><strong>$ homestar ping --help
-</strong>Ping the Homestar runtime to see if it's running
+```
+$ homestar ping --help
+Ping the Homestar runtime to see if it's running
 
 Usage: homestar ping [OPTIONS]
 
 Options:
-      --host &#x3C;HOST>        Homestar RPC host [default: ::1]
-  -p, --port &#x3C;PORT>        Homestar RPC port [default: 3030]
-      --timeout &#x3C;TIMEOUT>  Homestar RPC timeout [default: 60s]
+      --host <HOST>        Homestar RPC host [default: ::1]
+  -p, --port <PORT>        Homestar RPC port [default: 3030]
+      --timeout <TIMEOUT>  Homestar RPC timeout [default: 60s]
   -h, --help               Print help
-</code></pre>
+```
 
 ## Run a workflow
 
 The `homestar run` command requests a workflow run from a Homestar node.
 
-<pre><code><strong>$ homestar run --help
-</strong>Run an IPVM-configured workflow file on the Homestar runtime
+```
+$ homestar run --help
+Run an IPVM-configured workflow file on the Homestar runtime
 
-Usage: homestar run [OPTIONS] --workflow &#x3C;FILE>
+Usage: homestar run [OPTIONS] <FILE>
+
+Arguments:
+  <FILE>  IPVM-configured workflow file to run.
+          Supported:
+            - JSON (.json)
 
 Options:
-      --host &#x3C;HOST>        Homestar RPC host [default: ::1]
-  -p, --port &#x3C;PORT>        Homestar RPC port [default: 3030]
-      --timeout &#x3C;TIMEOUT>  Homestar RPC timeout [default: 60s]
-  -n, --name &#x3C;NAME>        Local name given to a workflow (optional)
-  -w, --workflow &#x3C;FILE>    IPVM-configured workflow file to run.
-                           Supported:
-                             - JSON (.json)
+      --host <HOST>        Homestar RPC host [default: ::1]
+  -p, --port <PORT>        Homestar RPC port [default: 3030]
+      --timeout <TIMEOUT>  Homestar RPC timeout [default: 60s]
+  -n, --name <NAME>        Local name given to a workflow (optional)
   -h, --help               Print help
-</code></pre>
+```
 
 A run command must include the workflow to run.
 
 ```
-homestar run -w tests/fixtures/test-workflow-add-one.json
+homestar run workflow.json
 ```
 
 The RPC port should match the RPC port of the Homestar runtime that will run the workflow.
@@ -149,6 +123,27 @@ Options:
 ```
 
 The RPC port should match the port on the running Homestar node.
+
+## Query node
+
+The `homestar node` command displays information about a running Homestar node, including peer ID, listen addresses, and connections to other nodes.
+
+```
+$ homestar node --help
+Get node identity / information
+
+Usage: homestar node [OPTIONS]
+
+Options:
+      --host <HOST>        Homestar RPC host [default: ::1]
+  -p, --port <PORT>        Homestar RPC port [default: 3030]
+      --timeout <TIMEOUT>  Homestar RPC timeout [default: 60s]
+  -h, --help               Print help
+```
+
+## Display info
+
+The `homestar info` command displays information about the `homestar` binary including version, git commit SHA, commit timestamp, and features the binary was compiled with.
 
 ## Debug mode
 
