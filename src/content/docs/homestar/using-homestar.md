@@ -55,7 +55,7 @@ The runtime can be provided a configuration file and an SQLite database file. Ho
 homestar start -c settings.toml --db my.db
 ```
 
-See our [configuration guide](configuration) for information about node configuration.
+See our [configuration guide](../configuration) for information about node configuration.
 
 ## Ping
 
