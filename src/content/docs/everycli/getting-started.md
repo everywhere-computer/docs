@@ -88,7 +88,7 @@ Build your rust package by specifying a `wasm32-unknown-unknown` target
 cargo build --target wasm32-unknown-unknown
 ```
 
-Install [wasm-tools]() the generate a Wasm component from the build target of your `cargo build` command
+Install [wasm-tools](https://github.com/bytecodealliance/wasm-tools) the generate a Wasm component from the build target of your `cargo build` command
 
 ```shell
 wasm-tools component new ./target/wasm32-unknown-unknown/debug/hello.wasm -o ./hello.wasm
