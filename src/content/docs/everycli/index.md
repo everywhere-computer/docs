@@ -25,10 +25,9 @@ We are stashing some custom functions written by the Fission team in this repo: 
 
 This will eventually migrate to published functions available through the control panel.
 
-
 ## API Gateway
 
-Running the CLI locally will start a Homestar node, API gateway, and local control panel[^ipfs]. 
+Running the CLI locally will start a Homestar node, API gateway, and local control panel[^ipfs].
 
 Integration with Cloudflare Tunnels will expose this as a live public endpoint. This means you can build apps and other experiences that are running on compute from your local Homestar node.
 
