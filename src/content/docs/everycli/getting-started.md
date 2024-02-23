@@ -45,7 +45,9 @@ Write a TypeScript function with clearly specified argument and return types
 ```typescript
 // hello.ts
 
-// Hello world function that will take a `name` param and return `Hello <name>`
+/**
+ * Hello world function that will take a `name` param and return `Hello <name>`
+ */
 export function hello(name: string): string {
   return `Hello ${name}`;
 }
@@ -59,23 +61,61 @@ every cli dev --fn <ABSOLUTE_PATH_TO_YOUR_FUNCTION_DIR>/hello.ts
 
 ### Creating Wasm functions in Rust
 
+Init a new function lib using [cargo](https://github.com/rust-lang/cargo?tab=readme-ov-file#installing-cargo)
+
+```shell
+mkdir hello
+cd hello
+cargo init --name hello --lib
+```
+
+Add [wit-bindgen](https://github.com/bytecodealliance/wit-bindgen) to your `cargo.toml` `dependencies` and specify the `[lib].crate-type`
+
+```toml
+// cargo.toml
+
+[package]
+name = "hello"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wit-bindgen = "0.13"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+```
+
 Write a Rust function with clearly specified argument and return types
 
 ```rust
-// hello.rs
+// src/lib.rs
 
-// Hello world function that will take a `name` param and return `Hello <name>`
-fn hello(name: String) -> String {
-  format_args!("Hello {name}")
+wit_bindgen::generate!({
+    world: "hello",
+    exports: {
+        world: Component,
+    }
+});
+
+pub struct Component;
+
+impl Guest for Component {
+    /**
+     * Hello world function that will take a `name` param and return `Hello <name>`
+     */
+    fn hello(name: String) -> String {
+        format!("Hello {}", name)
+    }
 }
 ```
 
 Create a [WebAssembly Interface Type(WIT)](https://component-model.bytecodealliance.org/design/wit.html) file for your rust function
 
 ```wit
-// host.wit
+// wit/host.wit
 
-package <your_package_name>@<your_package_version>
+package fission:hello@0.1.0
 
 world hello {
   export hello: func(name: string) -> string
