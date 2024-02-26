@@ -123,7 +123,7 @@ world hello {
 }
 ```
 
-Build your rust package by specifying a `wasm32-unknown-unknown` target
+Build your rust package by specifying a `wasm32-unknown-unknown` target(Note: if you do not have the `wasm32-unknown-unknown` target installed, you will first need to run `rustup target add wasm32-unknown-unknown`)
 
 ```shell
 cargo build --target wasm32-unknown-unknown
