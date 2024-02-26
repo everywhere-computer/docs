@@ -7,6 +7,8 @@ Every CLI is an experimental CLI for developers written in JavaScript. It has a 
 
 More info in the Github repo, including usage: https://github.com/everywhere-computer/every-cli
 
+Follow the [Every CLI Local Development guide](/everycli/local-dev/) to write your own functions and expose a public API gateway.
+
 ## Wasmify
 
 In order to make an easy experience for JavaScript developers, the Every CLI has a function to "Wasmify" TypeScript source code. This will output a compiled Wasm binary that can be run directly in Everywhere Computer.

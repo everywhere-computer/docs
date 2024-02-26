@@ -1,34 +1,32 @@
 ---
-title: Getting Started
+title: Every CLI Local Development
 description: The Every CLI is a developer tool that includes a local gateway server
 ---
 
-## Setting Up Local Development Environment
-
-### Installation
+## Installation
 
 ```shell
 npm i -g @everywhere-computer/every-cli
 ```
 
-### Usage
+## Usage
 
-#### Prerequisites
+### Prerequisites
 
 1. Ensure you have the IPFS daemon running via [ipfs daemon](https://docs.ipfs.tech/how-to/command-line-quick-start/#take-your-node-online) or [IPFS Desktop](https://docs.ipfs.tech/install/ipfs-desktop/)
-2. Create a custom TS or Wasm function(or clone TS examples repo [here](https://github.com/everywhere-computer/custom-homestar-functions-ts))
+2. Create a custom TS or Wasm function, or clone TS examples repo [github.com/everywhere-computer/custom-homestar-functions-ts](https://github.com/everywhere-computer/custom-homestar-functions-ts).
 
-#### Creating the Everywhere Computer environment
+### Creating the Everywhere Computer environment
 
-To start a [Homestar](https://github.com/ipvm-wg/homestar) node, API gateway, CloudFlare tunnel and [Everywhere Computer control panel](https://github.com/everywhere-computer/control-panel)
+Running the Every CLI will start a [Homestar](/homestar/what-is-homestar/) node, API gateway, CloudFlare tunnel and locally running copy of the Everywhere Computer [control panel](https://control.everywhere.computer).
 
-**To create a single function Homestar workflow**
+#### To create a single function Homestar workflow
 
 ```shell
 every dev --fn <ABSOLUTE_PATH_TO_FUNCTION_FILE>
 ```
 
-**To create a multi-function Homestar workflow**
+#### To create a multi-function Homestar workflow
 
 ```shell
 every dev --fn <ABSOLUTE_PATH_TO_FUNCTION_FILE> --fn <ABSOLUTE_PATH_TO_OTHER_FUNCTION_FILE>
@@ -36,7 +34,10 @@ every dev --fn <ABSOLUTE_PATH_TO_FUNCTION_FILE> --fn <ABSOLUTE_PATH_TO_OTHER_FUN
 
 ## Function development loop
 
-Please Homestar functions do not currently support effects, which means they must be pure functions
+:::note
+We are currently focusing on pure functions that are deterministic, and thus also cacheable anywhere within the network.
+:::
+
 
 ### Creating TypeScript functions
 
@@ -142,4 +143,6 @@ every cli dev --fn <ABSOLUTE_PATH_TO_YOUR_FUNCTION_DIR>/hello.wasm
 
 ## Setting up a tunnel
 
-By default the [every-cli](https://github.com/everywhere-computer/every-cli) will start a [CloudFlare tunnel](https://www.cloudflare.com/en-gb/products/tunnel/) for you. This will eventually be configurable through an argument in the CLI. We will also look at supporting tunnels via [ngrok](https://ngrok.com/) and [tailscale](https://tailscale.com/)
+By default the [every-cli](https://github.com/everywhere-computer/every-cli) will start a [CloudFlare tunnel](https://www.cloudflare.com/en-gb/products/tunnel/) for you.
+
+If you're familiar with [ngrok](https://ngrok.com/) or [tailscale](https://tailscale.com/), you can also use those to expose your local node server to the public Internet.
