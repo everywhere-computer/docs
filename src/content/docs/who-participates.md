@@ -5,36 +5,28 @@ description: There are many ways to get involved.
 
 There are many ways to get involved.
 
-## As an Operator
+## App Developers: Save Time, Money and Headaches
 
-Because they run _everywhere,_ Homestar nodes are ready to be operated at a wide array of scales. We encourage you to do so! At any scale, operating your nodes privately or connecting into the open Everywhere Computer network is your choice.
+Get your app deployed with high resilience, fast execution, and zero deployment. Achieve the certainty and portability you desire without needing to be a dev ops expert. Leverage a network of functions and workflows already optimized for the outcomes you need.
 
-* **Home-scale:** Run a Homestar node on your local machine or personal cloud account as we boot up the network. No matter how you participate in the Everywhere Computer, you'll start as a home-scale operator. And it's easy to do.
-* **Area-scale:** eg. factories, warehouses, neighbourhoods, cities
-* **World-scale:** eg. hyperclouds, telco infrastructure, logistics networks, global commons
+## Operators: Earn by Powering The Network
 
-No matter your eventual scale, the best place to start is by [running a local node](getting-started/setup-your-local-node). If you'd like to learn more about area-scale and world-scale setups, book a call with us: [https://calendly.com/everywherecomputer/product](https://calendly.com/everywherecomputer/product)
+Connect your nodes to our open network for compensation or opt for a private setup. Operators are needed everywhere, at every scale:
 
-## As a Function Author
+* **Home-scale:** Within 5 minutes, run a node on your personal machine. Everyone starts as a home-scale operator.
+* **Area-scale:** Serve one specific locale: _eg. factories, warehouses, neighbourhoods, cities._
+* **World-scale:** Serve many locales: _eg. hyperclouds, telco infrastructure, logistics networks, global commons._
 
-Try your hand at writing functions and workflow templates for the Everywhere Computer. They compile to Wasm (WebAssembly) and can be run by anyone in the network.
+No matter your eventual scale, the best place to start is by [running a local node](getting-started/setup-your-local-node). If you'd like to learn more about area-scale and world-scale setups, [book a call with us](https://calendly.com/everywherecomputer/product).
 
-* **Front-End Devs:** Get backend capabilities that run local-first, on your users' devices, and run at scale on the Everywhere Computer when needed.
-* **Rust(aceans):** Rust is the native language of our Homestar nodes, and is ready for you to author in today.
-* **JavaScript:**  <mark style="background-color:green;">coming soon</mark> Track the progress on our [Roadmap](https://github.com/orgs/everywhere-computer/projects/1)
-* **Python:**  <mark style="background-color:green;">coming soon</mark> Track the progress on our [Roadmap](https://github.com/orgs/everywhere-computer/projects/1)
-* **BYOL (Bring Your Own Language):** For languages that support Wasm & the Wasm component model, you can write and deploy to the Everywhere Computer today. _And,_ for those that don't, the path is open for you to develop a language integration on your own by supporting Wasm & the Wasm component model.
+## Function Authors: Monetize Your Code
+
+Share your functions and workflows, from front-end enhancements to powerful backend capabilities that scale. Write functions in Rust, JavaScript and Python today. As more languages are supported by the [Wasm component model](https://component-model.bytecodealliance.org/language-support.html), they will just work.
 
 You can get started [writing custom functions](getting-started/write-a-custom-function) right now, and soon we'll have a global registry for you to publish them to.
 
-If you've got a burning need for JavaScript and Python support today, or you're interested in developing your own language integration, please book a call: [https://calendly.com/everywherecomputer/product](https://calendly.com/everywherecomputer/product)
+## Service Providers: Profit From Your Expertise
 
-## As a Service Provider
+Our network thrives on diverse services: consulting, tooling, and cloud services — if it’s [UCAN-enabled](https://ucan.xyz), it fits right in.
 
-Beyond authoring functions, and operating nodes, there are a variety of services participants in the network will need.&#x20;
-
-* **Consulting:** Auditing, workflow optimization and custom functions are just a few examples.
-* **Tooling:** Curated registries, observability platforms and IDE integrations.
-* **Cloud Services (aka IaaS, BaaS, PaaS and SaaS):**  The Everywhere Computer is compatible with any UCAN-enabled service endpoint.
-
-If you're interested in providing services to the Everywhere Computer community, book a call with us: [https://calendly.com/everywherecomputer/product](https://calendly.com/everywherecomputer/product)
+If you're interested in providing services to the Everywhere Computer community, [book a call with us](https://calendly.com/everywherecomputer/product).

@@ -6,14 +6,19 @@ description:
   connectivity. And it handles metering and billing.
 ---
 
-The **Everywhere Computer** (**ϵ✵**) lets you write complex code that runs _everywhere_ — your local machine, proprietary hyper-clouds, and everything in between. It lets you compose small, powerful functions into complex workflow logic, and execute them reliably at scale.
+The **Everywhere Computer** (**ϵ✵**) lets you run code _everywhere_ — your personal computer, the cloud and everything in between. Some have called it the Uber for compute.
 
-When you choose the Everywhere Computer, you choose the ability to:
+With high resilience, fast execution, and zero deployment:
+* **Write** functions in your language of choice: Rust, JS, Python, ++
+* **Compose** functions and workflows written by yourself and others
+* **Run** your own nodes or rent from ours
+* **Extend** capabilities with any [UCAN](https://ucan.xyz)-enabled service
 
-* **Run** your own self-managed network or rent from ours
-* **Write** functions in your language of choice: Rust, JS, ++
-* **Compose** functions and workflows written by others
-* **Extend** the network's capabilities with any [UCAN](https://ucan.xyz)-enabled service
+## Built on open protocols
+
+[IPVM](https://fission.codes/ipvm/), the InterPlanetary Virtual Machine, offers a seamless, secure, and open environment for WebAssembly functions. Leveraging content-addressed data, PKI, and capabilities, it ensures computational freedom and interoperability, avoiding lock-in with any single cloud provider.
+
+[Homestar](https://github.com/ipvm-wg/homestar/) is the Everywhere Computer's reference implementation of the IPVM standards, written in Rust.
 
 ## Where do I begin?
 
