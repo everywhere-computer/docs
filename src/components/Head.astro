@@ -2,9 +2,35 @@
 import type { Props } from '@astrojs/starlight/props';
 import Default from '@astrojs/starlight/components/Head.astro';
 import openGraphImage from '../assets/open-graph.png';
+import frameImage from '../assets/ec-og-630-30fps.gif';
 import PostHog from '../components/posthog.astro';
 ---
 
 <Default {...Astro.props}><slot /></Default>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://docs.everywhere.computer">
+<meta property="og:title" content="Everywhere Computer Docs">
+<meta property="og:description" content="Learn How To Write Edge Compute That Runs Everywhere">
 <meta property="og:image" content={openGraphImage.src}>
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="everywhere.computer">
+<meta property="twitter:url" content="https://everywhere.computer">
+<meta name="twitter:title" content="Everywhere Computer Docs">
+<meta name="twitter:description" content="Learn How To Write Edge Compute That Runs Everywhere">
+<meta name="twitter:image" content={openGraphImage.src}>
+
+<meta property="fc:frame" content="vNext">
+<meta property="fc:frame:image" content={frameImage.src}>
+<meta property="fc:frame:image:aspect_ratio" content="1:1">
+<meta property="fc:frame:button:1" content="🌐 Home">
+<meta property="fc:frame:button:1:action" content="link">
+<meta property="fc:frame:button:1:target" content="https://everywhere.computer">
+<meta property="fc:frame:button:2" content="📖 Docs">
+<meta property="fc:frame:button:2:action" content="link">
+<meta property="fc:frame:button:2:target" content="https://docs.everywhere.computer">
+<meta property="fc:frame:button:3" content="💬 /ec">
+<meta property="fc:frame:button:3:action" content="link">
+<meta property="fc:frame:button:3:target" content="https://warpcast.com/~/channel/ec">
+
 <PostHog />
