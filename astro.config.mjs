@@ -40,9 +40,14 @@ export default defineConfig({
 				{ label: '👋 Welcome', link: '/' },
 				{ label: '🤔 Why Choose It?', link: '/why-choose' },
 				{ label: '🤝 Who Participates?', link: '/who-participates' },
+				{ label: '🐇 Quick Start', link: '/quick-start' },
 				{
-					label: '🏗️ Getting Started',
-					autogenerate: { directory: 'getting-started' },
+					label: '🧑‍💻 Every CLI',
+					autogenerate: { directory: 'everycli' },
+				},
+				{
+					label: '🏗️ Manual Setup',
+					autogenerate: { directory: 'manual-setup' },
 				},
 				// {
 				// 	label: '🎛️ Control Panel',

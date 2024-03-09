@@ -4,7 +4,7 @@ description:
   Now that the Everywhere Computer is running on your machine, let's run a
   workflow.
 sidebar:
-  order: 2
+  order: 4
 ---
 
 The Everywhere Computer works by running workflows: sequences of functions you'll write to accomplish your compute jobs. They can be big. They can be small. They can run in isolation.  They can be composed together.

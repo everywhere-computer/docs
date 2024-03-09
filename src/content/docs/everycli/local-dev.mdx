@@ -1,20 +1,19 @@
 ---
-title: Every CLI Local Development
-description: The Every CLI is a developer tool that includes a local gateway server
+title: Every CLI Usage
+description: The Every CLI is a developer tool that includes a local gateway server.
 ---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+:::tip[Before you continue]
+To get setup, please follow our [Quick Start](../quick-start) guide.
+:::
 
 ## Installation
 
 ```shell
 npm i -g @everywhere-computer/every-cli
 ```
-
-## Usage
-
-### Prerequisites
-
-1. Ensure you have the IPFS daemon running via [ipfs daemon](https://docs.ipfs.tech/how-to/command-line-quick-start/#take-your-node-online) or [IPFS Desktop](https://docs.ipfs.tech/install/ipfs-desktop/)
-2. Create a custom TS or Wasm function, or clone TS examples repo [github.com/everywhere-computer/custom-homestar-functions-ts](https://github.com/everywhere-computer/custom-homestar-functions-ts).
 
 ### Creating the Everywhere Computer environment
 
@@ -38,7 +37,8 @@ every dev --fn <ABSOLUTE_PATH_TO_FUNCTION_FILE> --fn <ABSOLUTE_PATH_TO_OTHER_FUN
 We are currently focusing on pure functions that are deterministic, and thus also cacheable anywhere within the network.
 :::
 
-
+<Tabs>
+<TabItem label="TypeScript">
 ### Creating TypeScript functions
 
 Write a TypeScript function with clearly specified argument and return types
@@ -59,7 +59,8 @@ Start the CLI and point it to your custom TypeScript function
 ```shell
 every cli dev --fn <ABSOLUTE_PATH_TO_YOUR_FUNCTION_DIR>/hello.ts
 ```
-
+</TabItem>
+<TabItem label="Rust">
 ### Creating Wasm functions in Rust
 
 Init a new function lib using [cargo](https://github.com/rust-lang/cargo?tab=readme-ov-file#installing-cargo)
@@ -134,6 +135,8 @@ Install [wasm-tools](https://github.com/bytecodealliance/wasm-tools) the generat
 ```shell
 wasm-tools component new ./target/wasm32-unknown-unknown/debug/hello.wasm -o ./hello.wasm
 ```
+</TabItem>
+</Tabs>
 
 Start the CLI and point it to your custom Wasm function
 

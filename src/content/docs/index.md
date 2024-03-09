@@ -14,7 +14,7 @@ With high resilience, fast execution, and zero deployment:
 * **Run** your own nodes or rent from ours
 * **Extend** capabilities with any [UCAN](https://ucan.xyz)-enabled service
 
-## Built on open protocols
+## It's built on open protocols
 
 [IPVM](https://fission.codes/ipvm/), the InterPlanetary Virtual Machine, offers a seamless, secure, and open environment for WebAssembly functions. Leveraging content-addressed data, PKI, and capabilities, it ensures computational freedom and interoperability, avoiding lock-in with any single cloud provider.
 
@@ -22,6 +22,6 @@ With high resilience, fast execution, and zero deployment:
 
 ## Where do I begin?
 
-Jump right in and follow our [Getting Started](getting-started/setup-your-local-node) guide to begin experimenting with a local node. If you're curious about what's coming next, check out our [Roadmap](https://github.com/orgs/everywhere-computer/projects/1/views/1).
+Jump right in and follow our [Quick Start](quick-start) guide to begin experimenting with a local node. If you're curious about what's coming next, check out our [Roadmap](https://github.com/orgs/everywhere-computer/projects/1/views/1).
 
 Or, if you'd like to learn more about the Everywhere Computer ecosystem, read on...

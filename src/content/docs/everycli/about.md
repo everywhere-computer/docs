@@ -1,9 +1,9 @@
 ---
-title: Every CLI
-description: The Every CLI is a developer tool that includes a local gateway server
+title: About the Every CLI
+description: The Every CLI is the fastest way to get started writing and running functions on the Everywhere Computer
 ---
 
-Every CLI is an experimental CLI for developers written in JavaScript. It has a set of convenience functions for interacting with Homestar and the Everywhere Computer control panel.
+The Every CLI is the fastest way to get started writing and running functions on the Everywhere Computer. It has a set of convenience functions for interacting with Homestar and the Everywhere Computer control panel.
 
 More info in the Github repo, including usage: https://github.com/everywhere-computer/every-cli
 
@@ -29,8 +29,6 @@ This will eventually migrate to published functions available through the contro
 
 ## API Gateway
 
-Running the CLI locally will start a Homestar node, API gateway, and local control panel[^ipfs].
+Running the CLI locally will start a Homestar node, API gateway, and local control panel.
 
 Integration with Cloudflare Tunnels will expose this as a live public endpoint. This means you can build apps and other experiences that are running on compute from your local Homestar node.
-
-[^ipfs]: Follow the [setup your local node](/getting-started/setup-your-local-node/#prepare-ipfs) instructions to run IPFS locally.
