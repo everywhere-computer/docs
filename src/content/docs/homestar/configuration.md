@@ -5,7 +5,7 @@ description: Configuring a Homestar node
 
 Homestar nodes are configured with a [TOML](https://toml.io) settings file. Homestar logs its configuration at start up.
 
-We maintain a [defaults.toml](https://github.com/ipvm-wg/homestar/blob/main/homestar-runtime/config/defaults.toml) configuration file than includes all default Homestar settings.
+Run `homestar init --dry-run` to view the default Homestar settings.
 
 ## Minimal configuration
 
