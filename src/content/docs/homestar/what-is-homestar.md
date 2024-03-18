@@ -7,4 +7,4 @@ sidebar:
 
 Homestar is the Rust-based server that is a reference implementation of the IPVM protocol focused on WebAssembly-based workflows.
 
-If you need help getting started, please follow our [guide on setting up your own Homestar node](/getting-started/setup-your-local-node).
+If you need help getting started, please follow our [guide on setting up your own Homestar node](../manual-setup/setup-your-local-node/).
