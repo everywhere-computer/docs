@@ -5,7 +5,7 @@ description: Getting started with Homestar
 
 ## Install
 
-See [Setup Your Local Node](../manual-setup/setup-your-local-node/) for instructions on installing Homestar.
+See [Setup Your Local Node](../../manual-setup/setup-your-local-node/) for instructions on installing Homestar.
 
 ## Help
 
