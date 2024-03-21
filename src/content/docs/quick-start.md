@@ -37,7 +37,7 @@ This should produce an output like the following in your terminal:
 ```bash
 ✔ Functions parsed and compiled
 ✔ Homestar is running at http://127.0.0.1:8020
-✔ Control Panel is running at http://127.0.0.1:4173
+✔ Control Panel is running at https://control.everywhere.computer
 
 ◐ Starting cloudflared tunnel to http://127.0.0.1:3000/                                                                                                    
 
@@ -55,9 +55,9 @@ Everything is now ready to run your function:
 
 ### Run `hello` From The Control Panel
 
-Visit your local Control Panel at [http://127.0.0.1:4173](http://127.0.0.1:4173). You should see the following interface:
+Visit your local Control Panel at [https://control.everywhere.computer](https://control.everywhere.computer). You should see the following interface:
 
-![The Control Panel](./assets/quickstart-1.jpg)
+![The Control Panel](./assets/quickstart-1.jpeg)
 
 Enter a name and hit the "Run" button. You should see your first result!
 
@@ -87,7 +87,7 @@ Let's construct a two task workflow to test this out. To do this, we'll instruct
 every dev --fn src/functions/hello.ts --fn src/functions/concat.ts
 ```
 
-![A Multi-Function Workflow](./assets/quickstart-2.jpg)
+![A Multi-Function Workflow](./assets/quickstart-2.jpeg)
 
 ## Next Steps
 
