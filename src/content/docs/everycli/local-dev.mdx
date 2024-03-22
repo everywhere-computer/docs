@@ -129,6 +129,49 @@ The builds target `wasm32-wasi` and are compiled to `rust/target/wasm32-wasi/deb
 Note that the build generates `src/bindings.rs`. Check that the `wit-bindgen` version referenced at the top the file matches the `wit-bindgen-rt` version in the Cargo manifest if you see errors.
 
 </TabItem>
+
+<TabItem label="Python">
+### Creating Wasm components in Python
+
+Install the latest version of [Python](https://www.python.org/downloads/). Python 3.10 is the minimum required version for [`componentize-py`](https://pypi.org/project/componentize-py/).
+
+Create a [virtual environment](https://docs.python.org/3/library/venv.html), activate the environment, and install `componentize-py`:
+
+```sh
+python -m venv .venv
+source .venv/bin/activate
+pip install componentize-py
+```
+
+Write a WIT world in a `world.wit` file:
+
+```wit
+package example:hello;
+
+world hello {
+  export hello: func() -> string;
+}
+```
+
+Write an `app.py` that implements the WIT world:
+
+```python
+import hello
+
+class Hello(hello.Hello):
+    def hello(self) -> str:
+        return "Hello, World!"
+```
+
+Build the Wasm component:
+
+```sh
+componentize-py -d world.wit -w hello componentize app -o hello.wasm
+```
+
+This command will produce a `hello.wasm` component.
+
+</TabItem>
 </Tabs>
 
 Start the CLI and point it to your custom Wasm function
