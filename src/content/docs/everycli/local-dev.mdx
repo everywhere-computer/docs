@@ -133,9 +133,9 @@ Note that the build generates `src/bindings.rs`. Check that the `wit-bindgen` ve
 <TabItem label="Python">
 ### Creating Wasm components in Python
 
-Install the latest version of [Python](https://www.python.org/downloads/). Python 3.10 is the minimum required version for [`componentize-py`](https://pypi.org/project/componentize-py/).
+Install the latest version of [Python][install-python]. Python 3.10 is the minimum required version for [`componentize-py`][componentize-py].
 
-Create a [virtual environment](https://docs.python.org/3/library/venv.html), activate the environment, and install `componentize-py`:
+Create a [virtual environment][virtual-environment], activate the environment, and install `componentize-py`:
 
 ```sh
 python -m venv .venv
@@ -222,4 +222,7 @@ If you have specified your own config file, the control panel will run locally s
 ➜ Tunnel:   https://sometimes-comical-word-set.trycloudflare.com
 ```
 
+[componentize-py]: https://pypi.org/project/componentize-py/
+[install-python]: https://www.python.org/downloads/
 [install-rust]: https://www.rust-lang.org/tools/install
+[virtual-environment]: https://docs.python.org/3/library/venv.html
