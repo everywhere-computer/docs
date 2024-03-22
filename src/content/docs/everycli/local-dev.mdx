@@ -59,82 +59,118 @@ Start the CLI and point it to your custom TypeScript function
 ```shell
 every cli dev --fn <ABSOLUTE_PATH_TO_YOUR_FUNCTION_DIR>/hello.ts
 ```
+
 </TabItem>
 <TabItem label="Rust">
-### Creating Wasm functions in Rust
+### Creating Wasm components in Rust
 
-Init a new function lib using [cargo](https://github.com/rust-lang/cargo?tab=readme-ov-file#installing-cargo)
+Install the latest stable version of [Rust][install-rust]. The install should make the `cargo` and `rustup` commands available for you.
 
-```shell
-mkdir hello
-cd hello
-cargo init --name hello --lib
+Install `cargo-component` and add the `wasm32-wasi` target:
+
+```sh
+cargo install cargo-component
+rustup target add wasm32-wasi
 ```
 
-Add [wit-bindgen](https://github.com/bytecodealliance/wit-bindgen) to your `cargo.toml` `dependencies` and specify the `[lib].crate-type`
+Initialize a new component library:
 
-```toml
-// cargo.toml
-
-[package]
-name = "hello"
-version = "0.1.0"
-edition = "2021"
-
-[dependencies]
-wit-bindgen = "0.13"
-
-[lib]
-crate-type = ["cdylib", "rlib"]
+```sh
+cargo component new --lib hello
 ```
 
-Write a Rust function with clearly specified argument and return types
-
-```rust
-// src/lib.rs
-
-wit_bindgen::generate!({
-    world: "hello",
-    exports: {
-        world: Component,
-    }
-});
-
-pub struct Component;
-
-impl Guest for Component {
-    /**
-     * Hello world function that will take a `name` param and return `Hello <name>`
-     */
-    fn hello(name: String) -> String {
-        format!("Hello {}", name)
-    }
-}
-```
-
-Create a [WebAssembly Interface Type(WIT)](https://component-model.bytecodealliance.org/design/wit.html) file for your rust function
+This command generates a `wit/world.wit` WIT world:
 
 ```wit
-// wit/host.wit
+package component:hello;
 
-package fission:hello@0.1.0
-
-world hello {
-  export hello: func(name: string) -> string
+/// An example world for the component to target.
+world example {
+    export hello-world: func() -> string;
 }
 ```
 
-Build your rust package by specifying a `wasm32-unknown-unknown` target(Note: if you do not have the `wasm32-unknown-unknown` target installed, you will first need to run `rustup target add wasm32-unknown-unknown`)
+It also generates Rust code in `src/lib.rs` that implements the WIT world:
 
-```shell
-cargo build --target wasm32-unknown-unknown
+```rust
+#[allow(warnings)]
+mod bindings;
+
+use bindings::Guest;
+
+struct Component;
+
+impl Guest for Component {
+    /// Say hello!
+    fn hello_world() -> String {
+        "Hello, World!".to_string()
+    }
+}
+
+bindings::export!(Component with_types_in bindings);
 ```
 
-Install [wasm-tools](https://github.com/bytecodealliance/wasm-tools) the generate a Wasm component from the build target of your `cargo build` command
+Running a build generates a set of bindings that produce a `Guest` trait that requires us to implement the functions from the WIT world.
 
-```shell
-wasm-tools component new ./target/wasm32-unknown-unknown/debug/hello.wasm -o ./hello.wasm
+Build for the debug target:
+
+```sh
+cargo component build
 ```
+
+Build for release:
+
+```sh
+cargo component build --release
+```
+
+The builds target `wasm32-wasi` and are compiled to `rust/target/wasm32-wasi/debug/math.wasm` and `rust/target/wasm32-wasi/release/math.wasm` respectively.
+
+Note that the build generates `src/bindings.rs`. Check that the `wit-bindgen` version referenced at the top the file matches the `wit-bindgen-rt` version in the Cargo manifest if you see errors.
+
+</TabItem>
+
+<TabItem label="Python">
+### Creating Wasm components in Python
+
+Install the latest version of [Python][install-python]. Python 3.10 is the minimum required version for [`componentize-py`][componentize-py].
+
+Create a [virtual environment][virtual-environment], activate the environment, and install `componentize-py`:
+
+```sh
+python -m venv .venv
+source .venv/bin/activate
+pip install componentize-py
+```
+
+Write a WIT world in a `world.wit` file:
+
+```wit
+package example:hello;
+
+world hello {
+  export hello: func() -> string;
+}
+```
+
+Write an `app.py` that implements the WIT world:
+
+```python
+import hello
+
+class Hello(hello.Hello):
+    def hello(self) -> str:
+        return "Hello, World!"
+```
+
+Build the Wasm component:
+
+```sh
+componentize-py -d world.wit -w hello componentize app -o hello.wasm
+```
+
+This command will produce a `hello.wasm` component.
+
 </TabItem>
 </Tabs>
 
@@ -150,7 +186,6 @@ By default the [every-cli](https://github.com/everywhere-computer/every-cli) wil
 
 If you're familiar with [ngrok](https://ngrok.com/) or [tailscale](https://tailscale.com/), you can also use those to expose your local node server to the public Internet.
 
-
 ## Passing your own Homestar config
 
 By default the [every-cli](https://github.com/everywhere-computer/every-cli) will use the [default homestar.toml values](../../config/homestar) to specify configuration settings for your Homestar node.
@@ -164,10 +199,12 @@ every cli dev --fn <ABSOLUTE_PATH_TO_YOUR_FUNCTION_DIR>/hello.wasm --config ../<
 You can specify as many or as few values in your `toml` file as you like and the [every-cli](https://github.com/everywhere-computer/every-cli) will prioritize the values from your config over the default values.
 
 This means, if you only want to specify a different IPFS port, you simply need to create a `toml` file with
+
 ```toml
 [node.network.ipfs]
 port = 5002
 ```
+
 and the [every-cli](https://github.com/everywhere-computer/every-cli) will upload your functions to IPFS on port `5002` and configure Homestar to use IPFS port `5002`, as well.
 
 If you have specified your own config file, the control panel will run locally so its `.env` file can be overwritten if necessary:
@@ -177,10 +214,15 @@ If you have specified your own config file, the control panel will run locally s
 ✔ Homestar is running at http://127.0.0.1:8020
 ✔ Control Panel is running at http://127.0.0.1:5178
 
-◐ Starting cloudflared tunnel to http://127.0.0.1:3000/                                                                                                    
+◐ Starting cloudflared tunnel to http://127.0.0.1:3000/
 
 ... a QR code ...
 
 ➜ Local:    http://127.0.0.1:3000/
 ➜ Tunnel:   https://sometimes-comical-word-set.trycloudflare.com
 ```
+
+[componentize-py]: https://pypi.org/project/componentize-py/
+[install-python]: https://www.python.org/downloads/
+[install-rust]: https://www.rust-lang.org/tools/install
+[virtual-environment]: https://docs.python.org/3/library/venv.html
