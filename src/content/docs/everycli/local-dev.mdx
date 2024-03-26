@@ -22,13 +22,13 @@ Running the Every CLI will start a [Homestar](/homestar/what-is-homestar/) node,
 #### To create a single function Homestar workflow
 
 ```shell
-every dev --fn <PATH_TO_FUNCTION_FILE>
+every dev <PATH_TO_FUNCTION_FILE>
 ```
 
 #### To create a multi-function Homestar workflow
 
 ```shell
-every dev --fn <PATH_TO_FUNCTION_FILE> --fn <PATH_TO_OTHER_FUNCTION_FILE>
+every dev <PATH_TO_FUNCTION_FILE> <PATH_TO_OTHER_FUNCTION_FILE>
 ```
 
 ## Function development loop
@@ -57,7 +57,7 @@ export function hello(name: string): string {
 Start the CLI and point it to your custom TypeScript function
 
 ```shell
-every cli dev --fn <PATH_TO_YOUR_FUNCTION_DIR>/hello.ts
+every cli dev <PATH_TO_YOUR_FUNCTION_DIR>/hello.ts
 ```
 
 </TabItem>
@@ -177,7 +177,7 @@ This command will produce a `hello.wasm` component.
 Start the CLI and point it to your custom Wasm function
 
 ```shell
-every cli dev --fn <PATH_TO_YOUR_FUNCTION_DIR>/hello.wasm
+every cli dev <PATH_TO_YOUR_FUNCTION_DIR>/hello.wasm
 ```
 
 ## Setting up a tunnel
@@ -193,7 +193,7 @@ By default the [every-cli](https://github.com/everywhere-computer/every-cli) wil
 If you would like to specify your own `toml` file to be used as the configuration for Homestar, you can use the `--config` argument:
 
 ```shell
-every cli dev --fn <PATH_TO_YOUR_FUNCTION_DIR>/hello.wasm --config ../<YOUR_CONFIG_FILE_NAME>.toml
+every cli dev <PATH_TO_YOUR_FUNCTION_DIR>/hello.wasm --config ../<YOUR_CONFIG_FILE_NAME>.toml
 ```
 
 You can specify as many or as few values in your `toml` file as you like and the [every-cli](https://github.com/everywhere-computer/every-cli) will prioritize the values from your config over the default values.
