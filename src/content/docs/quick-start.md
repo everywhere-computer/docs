@@ -27,7 +27,7 @@ Clone down our [custom TypeScript functions repo](https://github.com/everywhere-
 
 ### Boot Up The Everywhere Computer
 
-Let's beging with `hello.ts`. From the root directory of the repository run:
+Let's begin with `hello.ts`. From the root directory of the repository run:
 
 ```shell
 every dev --fn src/functions/hello.ts
