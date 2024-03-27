@@ -29,7 +29,7 @@ every dev src/functions/hello.ts
 This should produce an output like the following in your terminal:
 
 ```bash
-✔ IPFS is running at http://127.0.0.1:5002/debug/vars
+✔ IPFS is running at http://127.0.0.1:5001/debug/vars
 ✔ Functions parsed and compiled
 ✔ Homestar is running at http://127.0.0.1:8020
 ✔ Control Panel is running at https://control.everywhere.computer
