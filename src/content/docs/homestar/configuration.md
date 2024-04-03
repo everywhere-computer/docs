@@ -129,7 +129,7 @@ node_addresses = [
 ]
 ```
 
-The `EXTERNAL-ADDRESS` is an externally reachable address for the node. This address could be a public IP address or a local network address like `192.168.1.x`. `RENDEZVOUS-SERVER-ADDRESS` is the address of the rendezvous server.
+The `EXTERNAL-ADDRESS` is an externally reachable address for the node. `RENDEZVOUS-SERVER-ADDRESS` is the address of the rendezvous server.
 
 A node makes discovery requests by adding a rendezvous server to its `node_addresses`.
 
